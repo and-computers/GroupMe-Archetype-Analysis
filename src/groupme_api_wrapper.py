@@ -5,6 +5,11 @@ f = open("../key.txt","r")
 TOKEN = f.read().strip()
 GROUPME_URL = "https://api.groupme.com/v3/"
 GROUPS_API = "groups"
+MESSAGES_API = "messages"
+
+# get all of the groups you are involved in
+# get all of the members of the goups you are in involved in
+# get all of the messages of each member in the group
 
 
 
@@ -16,4 +21,4 @@ for group_obj in json.loads(r.text)["response"]:
 	group_id = group_obj["id"]
 	spec_group_r = requests.get(GROUPME_URL+GROUPS_API+group_id)
 	spec_group_r = json.loads(spec_group_r)
-	
+
